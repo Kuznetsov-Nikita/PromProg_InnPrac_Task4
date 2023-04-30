@@ -1,0 +1,14 @@
+version: "3"
+services:
+  client:
+    build: ./lab-front
+      context: .
+      args:
+        - USERNAME=${USERNAME}
+        - PASSWORD=${PASSWORD}
+    ports:
+      - "3000:3000"
+    container_name: lab-front
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
